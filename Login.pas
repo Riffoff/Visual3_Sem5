@@ -4,10 +4,12 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs;
+  Dialogs, StdCtrls;
 
 type
-  TForm1 = class(TForm)
+  TFormLogin = class(TForm)
+    Button1: TButton;
+    procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -15,10 +17,17 @@ type
   end;
 
 var
-  Form1: TForm1;
+  FormLogin: TFormLogin;
 
 implementation
 
+uses MainMenu;
+
 {$R *.dfm}
+
+procedure TFormLogin.Button1Click(Sender: TObject);
+begin
+FormMenu.showmodal;
+end;
 
 end.

@@ -1,4 +1,4 @@
-object Form6: TForm6
+object FormUser: TFormUser
   Left = 205
   Top = 197
   Width = 1044

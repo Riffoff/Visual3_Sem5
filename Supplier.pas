@@ -7,7 +7,7 @@ uses
   Dialogs;
 
 type
-  TForm3 = class(TForm)
+  TFormSupplier = class(TForm)
   private
     { Private declarations }
   public
@@ -15,7 +15,7 @@ type
   end;
 
 var
-  Form3: TForm3;
+  FormSupplier: TFormSupplier;
 
 implementation
 

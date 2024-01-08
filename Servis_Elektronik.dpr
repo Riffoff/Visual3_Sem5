@@ -2,24 +2,26 @@ program Servis_Elektronik;
 
 uses
   Forms,
-  Login in 'Login.pas' {Form1},
-  Pelanggan in 'Pelanggan.pas' {Form2},
-  Supplier in 'Supplier.pas' {Form3},
-  Stok in 'Stok.pas' {Form4},
-  Transaksi in 'Transaksi.pas' {Form5},
-  User in 'User.pas' {Form6},
-  DataServis in 'DataServis.pas' {Form7};
+  Login in 'Login.pas' {FormLogin},
+  Pelanggan in 'Pelanggan.pas' {FormPelanggan},
+  Supplier in 'Supplier.pas' {FormSupplier},
+  Stok in 'Stok.pas' {FormStok},
+  Transaksi in 'Transaksi.pas' {FormTransaksi},
+  User in 'User.pas' {FormUser},
+  DataServis in 'DataServis.pas' {FormServis},
+  MainMenu in 'MainMenu.pas' {FormMenu};
 
 {$R *.res}
 
 begin
   Application.Initialize;
-  Application.CreateForm(TForm1, Form1);
-  Application.CreateForm(TForm2, Form2);
-  Application.CreateForm(TForm3, Form3);
-  Application.CreateForm(TForm4, Form4);
-  Application.CreateForm(TForm5, Form5);
-  Application.CreateForm(TForm6, Form6);
-  Application.CreateForm(TForm7, Form7);
+  Application.CreateForm(TFormLogin, FormLogin);
+  Application.CreateForm(TFormPelanggan, FormPelanggan);
+  Application.CreateForm(TFormSupplier, FormSupplier);
+  Application.CreateForm(TFormStok, FormStok);
+  Application.CreateForm(TFormTransaksi, FormTransaksi);
+  Application.CreateForm(TFormUser, FormUser);
+  Application.CreateForm(TFormServis, FormServis);
+  Application.CreateForm(TFormMenu, FormMenu);
   Application.Run;
 end.

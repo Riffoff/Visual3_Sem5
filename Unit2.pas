@@ -1,4 +1,4 @@
-unit Stok;
+unit Unit2;
 
 interface
 
@@ -7,7 +7,7 @@ uses
   Dialogs;
 
 type
-  TFormStok = class(TForm)
+  TForm2 = class(TForm)
   private
     { Private declarations }
   public
@@ -15,10 +15,11 @@ type
   end;
 
 var
-  FormStok: TFormStok;
+  Form2: TForm2;
 
 implementation
 
 {$R *.dfm}
 
 end.
+ 

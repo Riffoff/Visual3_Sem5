@@ -7,7 +7,7 @@ uses
   Dialogs;
 
 type
-  TForm5 = class(TForm)
+  TFormTransaksi = class(TForm)
   private
     { Private declarations }
   public
@@ -15,7 +15,7 @@ type
   end;
 
 var
-  Form5: TForm5;
+  FormTransaksi: TFormTransaksi;
 
 implementation
 

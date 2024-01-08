@@ -1,4 +1,4 @@
-object Form4: TForm4
+object FormStok: TFormStok
   Left = 255
   Top = 210
   Width = 1044

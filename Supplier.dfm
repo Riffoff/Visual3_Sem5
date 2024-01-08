@@ -1,4 +1,4 @@
-object Form3: TForm3
+object FormSupplier: TFormSupplier
   Left = 215
   Top = 228
   Width = 1044

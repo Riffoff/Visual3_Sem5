@@ -1,7 +1,7 @@
-object Form1: TForm1
-  Left = 238
+object FormLogin: TFormLogin
+  Left = 405
   Top = 179
-  Width = 1044
+  Width = 686
   Height = 540
   Caption = 'Form Login'
   Color = clBtnFace
@@ -13,4 +13,19 @@ object Form1: TForm1
   OldCreateOrder = False
   PixelsPerInch = 96
   TextHeight = 13
+  object Button1: TButton
+    Left = 136
+    Top = 88
+    Width = 401
+    Height = 289
+    Caption = 'LOGIN'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clRed
+    Font.Height = -96
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 0
+    OnClick = Button1Click
+  end
 end
