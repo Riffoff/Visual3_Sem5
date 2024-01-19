@@ -23,7 +23,6 @@ type
     B4: TButton;
     B5: TButton;
     dg1: TDBGrid;
-    B6: TButton;
     Edit3: TEdit;
     Edit4: TEdit;
     Edit5: TEdit;
@@ -34,6 +33,7 @@ type
     zqry1: TZQuery;
     frxdbdtst1: TfrxDBDataset;
     frxrprt1: TfrxReport;
+    B6: TButton;
     procedure kolombersih;
     procedure kolomaktif;
     procedure posisiawal;
@@ -74,7 +74,7 @@ end;
 
 procedure TFormPelanggan.kolombersih;
 begin
-Edit1.Clear; 
+Edit1.Clear;
 c1.text:= '';
 Edit2.Clear;
 Edit3.Clear;
@@ -86,7 +86,7 @@ procedure TFormPelanggan.posisiawal;
 begin
 kolombersih;
 
-edit1.Enabled:= false; 
+edit1.Enabled:= false;
 c1.Enabled:= false;
 edit2.Enabled:= false;
 edit3.Enabled:= false;
@@ -164,7 +164,6 @@ zqry1.SQL.Add('select * from pelanggan');
 zqry1.Open;
 ShowMessage('DATA BERHASIL DISIMPAN!');
 posisiawal;
-
 end;
 end;
 

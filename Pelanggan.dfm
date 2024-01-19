@@ -1,8 +1,8 @@
 object FormPelanggan: TFormPelanggan
-  Left = 416
-  Top = 116
-  Width = 736
-  Height = 602
+  Left = 448
+  Top = 110
+  Width = 735
+  Height = 605
   Caption = 'Form Pelanggan'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -202,35 +202,26 @@ object FormPelanggan: TFormPelanggan
         Visible = True
       end>
   end
-  object B6: TButton
-    Left = 595
-    Top = 448
-    Width = 89
-    Height = 49
-    Caption = 'LAPORAN'
-    TabOrder = 8
-    OnClick = B6Click
-  end
   object Edit3: TEdit
     Left = 184
     Top = 160
     Width = 161
     Height = 21
-    TabOrder = 9
+    TabOrder = 8
   end
   object Edit4: TEdit
     Left = 184
     Top = 200
     Width = 161
     Height = 21
-    TabOrder = 10
+    TabOrder = 9
   end
   object Edit5: TEdit
     Left = 504
     Top = 40
     Width = 161
     Height = 21
-    TabOrder = 11
+    TabOrder = 10
   end
   object c1: TComboBox
     Left = 184
@@ -238,7 +229,7 @@ object FormPelanggan: TFormPelanggan
     Width = 161
     Height = 21
     ItemHeight = 13
-    TabOrder = 12
+    TabOrder = 11
     Items.Strings = (
       'L'
       'P')
@@ -249,8 +240,17 @@ object FormPelanggan: TFormPelanggan
     Width = 657
     Height = 33
     Caption = 'KEMBALI KE MENU'
-    TabOrder = 13
+    TabOrder = 12
     OnClick = Button1Click
+  end
+  object B6: TButton
+    Left = 595
+    Top = 448
+    Width = 89
+    Height = 49
+    Caption = 'LAPORAN'
+    TabOrder = 13
+    OnClick = B6Click
   end
   object ds1: TDataSource
     DataSet = zqry1
@@ -283,6 +283,14 @@ object FormPelanggan: TFormPelanggan
   object frxdbdtst1: TfrxDBDataset
     UserName = 'datasetpelanggan'
     CloseDataSource = False
+    FieldAliases.Strings = (
+      'id_pelanggan=id_pelanggan'
+      'nama=nama'
+      'jk=jk'
+      'alamat=alamat'
+      'telp=telp'
+      'kota=kota'
+      'kodepos=kodepos')
     DataSet = zqry1
     BCDToCurrency = False
     Left = 440
@@ -297,7 +305,7 @@ object FormPelanggan: TFormPelanggan
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
     ReportOptions.CreateDate = 45114.372448819400000000
-    ReportOptions.LastChange = 45299.260090532410000000
+    ReportOptions.LastChange = 45299.260090532400000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       ''

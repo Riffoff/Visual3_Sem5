@@ -1,8 +1,8 @@
 object FormServis: TFormServis
-  Left = 266
-  Top = 190
-  Width = 1055
-  Height = 470
+  Left = 281
+  Top = 187
+  Width = 1057
+  Height = 442
   Caption = 'Form Servis'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -80,30 +80,23 @@ object FormServis: TFormServis
     Font.Style = []
     ParentFont = False
   end
-  object l9: TLabel
-    Left = 48
-    Top = 240
-    Width = 50
-    Height = 13
-    Caption = 'KODE POS'
-  end
   object Label1: TLabel
     Left = 48
-    Top = 280
+    Top = 248
     Width = 38
     Height = 13
     Caption = 'STATUS'
   end
   object Label2: TLabel
     Left = 48
-    Top = 320
+    Top = 288
     Width = 84
     Height = 13
     Caption = 'TANGGAL SERVIS'
   end
   object Label3: TLabel
     Left = 48
-    Top = 360
+    Top = 328
     Width = 73
     Height = 13
     Caption = 'ID PELANGGAN'
@@ -138,6 +131,7 @@ object FormServis: TFormServis
     Height = 49
     Caption = 'SIMPAN'
     TabOrder = 3
+    OnClick = B2Click
   end
   object B3: TButton
     Left = 768
@@ -146,6 +140,7 @@ object FormServis: TFormServis
     Height = 49
     Caption = 'EDIT'
     TabOrder = 4
+    OnClick = B3Click
   end
   object B4: TButton
     Left = 896
@@ -154,6 +149,7 @@ object FormServis: TFormServis
     Height = 49
     Caption = 'HAPUS'
     TabOrder = 5
+    OnClick = B4Click
   end
   object B5: TButton
     Left = 768
@@ -164,26 +160,13 @@ object FormServis: TFormServis
     TabOrder = 6
     OnClick = B5Click
   end
-  object dg1: TDBGrid
-    Left = 379
-    Top = 168
-    Width = 630
-    Height = 169
-    DataSource = ds1
-    TabOrder = 7
-    TitleFont.Charset = DEFAULT_CHARSET
-    TitleFont.Color = clWindowText
-    TitleFont.Height = -11
-    TitleFont.Name = 'Tahoma'
-    TitleFont.Style = []
-  end
   object B6: TButton
     Left = 896
     Top = 104
     Width = 89
     Height = 49
     Caption = 'LAPORAN'
-    TabOrder = 8
+    TabOrder = 7
     OnClick = B6Click
   end
   object Edit3: TEdit
@@ -191,21 +174,14 @@ object FormServis: TFormServis
     Top = 160
     Width = 161
     Height = 21
-    TabOrder = 9
-  end
-  object Edit4: TEdit
-    Left = 184
-    Top = 240
-    Width = 161
-    Height = 21
-    TabOrder = 10
+    TabOrder = 8
   end
   object Edit5: TEdit
     Left = 184
-    Top = 320
+    Top = 288
     Width = 161
     Height = 21
-    TabOrder = 11
+    TabOrder = 9
   end
   object cbbc1: TComboBox
     Left = 184
@@ -213,7 +189,7 @@ object FormServis: TFormServis
     Width = 161
     Height = 21
     ItemHeight = 13
-    TabOrder = 12
+    TabOrder = 10
   end
   object Button1: TButton
     Left = 376
@@ -221,7 +197,8 @@ object FormServis: TFormServis
     Width = 633
     Height = 33
     Caption = 'KEMBALI KE MENU'
-    TabOrder = 13
+    TabOrder = 11
+    OnClick = Button1Click
   end
   object cbb1: TComboBox
     Left = 184
@@ -229,59 +206,115 @@ object FormServis: TFormServis
     Width = 161
     Height = 21
     ItemHeight = 13
-    TabOrder = 14
+    TabOrder = 12
   end
   object cbb2: TComboBox
     Left = 184
-    Top = 280
+    Top = 248
     Width = 161
     Height = 21
     ItemHeight = 13
-    TabOrder = 15
+    TabOrder = 13
     Items.Strings = (
       'Pending'
       'Progress')
   end
   object cbb3: TComboBox
     Left = 184
-    Top = 360
+    Top = 328
     Width = 161
     Height = 21
     ItemHeight = 13
-    TabOrder = 16
+    TabOrder = 14
+  end
+  object dg1: TDBGrid
+    Left = 379
+    Top = 170
+    Width = 630
+    Height = 169
+    DataSource = ds1
+    TabOrder = 15
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    OnCellClick = dg1CellClick
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'no_servis'
+        Width = 100
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'nama_brg'
+        Width = 100
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'kerusakan'
+        Width = 100
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'perlengkapan'
+        Width = 100
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'harga'
+        Width = 100
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'id_sparepart'
+        Width = 100
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'status'
+        Width = 100
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'tgl_servis'
+        Width = 100
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'id_pelanggan'
+        Width = 100
+        Visible = True
+      end>
   end
   object ds1: TDataSource
     DataSet = zqry1
     Left = 448
     Top = 40
   end
-  object con1: TZConnection
-    ControlsCodePage = cGET_ACP
-    UTF8StringsAsWideField = False
-    AutoEncodeStrings = False
-    Connected = True
-    HostName = 'localhost'
-    Port = 3306
-    Database = 'visual3akhir'
-    User = 'root'
-    Protocol = 'mysql'
-    LibraryLocation = 'D:\Uniska\Delphi7\Semester 5\Visual3Akhir\libmysql.dll'
-    Left = 384
-    Top = 40
-  end
-  object zqry1: TZQuery
-    Connection = con1
-    Active = True
-    SQL.Strings = (
-      'select * from data_servis')
-    Params = <>
-    Left = 504
-    Top = 104
-  end
   object frxdbdtst1: TfrxDBDataset
     UserName = 'datasetsservis'
     CloseDataSource = False
-    DataSet = zqry1
+    FieldAliases.Strings = (
+      'no_servis=no_servis'
+      'nama_brg=nama_brg'
+      'kerusakan=kerusakan'
+      'perlengkapan=perlengkapan'
+      'harga=harga'
+      'id_sparepart=id_sparepart'
+      'status=status'
+      'tgl_servis=tgl_servis'
+      'id_pelanggan=id_pelanggan')
+    DataSource = ds1
     BCDToCurrency = False
     Left = 384
     Top = 104
@@ -295,7 +328,7 @@ object FormServis: TFormServis
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
     ReportOptions.CreateDate = 45114.372448819400000000
-    ReportOptions.LastChange = 45299.260090532410000000
+    ReportOptions.LastChange = 45310.541053588000000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       ''
@@ -328,9 +361,9 @@ object FormServis: TFormServis
         Top = 18.897650000000000000
         Width = 740.409927000000000000
         object Memo21: TfrxMemoView
-          Left = 215.433210000000000000
+          Left = 245.669450000000000000
           Top = 18.897650000000000000
-          Width = 298.582870000000000000
+          Width = 241.889920000000000000
           Height = 26.456710000000000000
           ShowHint = False
           Font.Charset = DEFAULT_CHARSET
@@ -339,7 +372,7 @@ object FormServis: TFormServis
           Font.Name = 'Arial'
           Font.Style = []
           Memo.UTF8 = (
-            'LAPORAN DATA PELANGGAN')
+            'LAPORAN DATA SERVIS')
           ParentFont = False
         end
       end
@@ -354,7 +387,7 @@ object FormServis: TFormServis
           Width = 71.811070000000000000
           Height = 18.897650000000000000
           ShowHint = False
-          DataField = 'id_pelanggan'
+          DataField = 'no_servis'
           DataSet = frxdbdtst1
           DataSetName = 'datasetsservis'
           Font.Charset = DEFAULT_CHARSET
@@ -365,15 +398,15 @@ object FormServis: TFormServis
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            '[datasetsservis."id_pelanggan"]')
+            '[datasetsservis."no_servis"]')
           ParentFont = False
         end
         object Memo13: TfrxMemoView
           Left = 71.811070000000000000
-          Width = 136.063080000000000000
+          Width = 166.299320000000000000
           Height = 18.897650000000000000
           ShowHint = False
-          DataField = 'nama'
+          DataField = 'nama_brg'
           DataSet = frxdbdtst1
           DataSetName = 'datasetsservis'
           Font.Charset = DEFAULT_CHARSET
@@ -384,15 +417,15 @@ object FormServis: TFormServis
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            '[datasetsservis."nama"]')
+            '[datasetsservis."nama_brg"]')
           ParentFont = False
         end
         object Memo16: TfrxMemoView
-          Left = 438.425480000000000000
-          Width = 94.488250000000000000
+          Left = 502.677490000000000000
+          Width = 113.385900000000000000
           Height = 18.897650000000000000
           ShowHint = False
-          DataField = 'telp'
+          DataField = 'harga'
           DataSet = frxdbdtst1
           DataSetName = 'datasetsservis'
           Font.Charset = DEFAULT_CHARSET
@@ -403,15 +436,15 @@ object FormServis: TFormServis
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            '[datasetsservis."telp"]')
+            '[datasetsservis."harga"]')
           ParentFont = False
         end
         object Memo17: TfrxMemoView
-          Left = 313.700990000000000000
+          Left = 377.953000000000000000
           Width = 124.724490000000000000
           Height = 18.897650000000000000
           ShowHint = False
-          DataField = 'alamat'
+          DataField = 'perlengkapan'
           DataSet = frxdbdtst1
           DataSetName = 'datasetsservis'
           Font.Charset = DEFAULT_CHARSET
@@ -422,15 +455,15 @@ object FormServis: TFormServis
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            '[datasetsservis."alamat"]')
+            '[datasetsservis."perlengkapan"]')
           ParentFont = False
         end
         object Memo18: TfrxMemoView
-          Left = 207.874150000000000000
-          Width = 105.826840000000000000
+          Left = 238.110390000000000000
+          Width = 139.842610000000000000
           Height = 18.897650000000000000
           ShowHint = False
-          DataField = 'jk'
+          DataField = 'kerusakan'
           DataSet = frxdbdtst1
           DataSetName = 'datasetsservis'
           Font.Charset = DEFAULT_CHARSET
@@ -441,15 +474,15 @@ object FormServis: TFormServis
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            '[datasetsservis."jk"]')
+            '[datasetsservis."kerusakan"]')
           ParentFont = False
         end
         object Memo19: TfrxMemoView
-          Left = 532.913730000000000000
+          Left = 616.063390000000000000
           Width = 124.724490000000000000
           Height = 18.897650000000000000
           ShowHint = False
-          DataField = 'kota'
+          DataField = 'id_sparepart'
           DataSet = frxdbdtst1
           DataSetName = 'datasetsservis'
           Font.Charset = DEFAULT_CHARSET
@@ -460,26 +493,7 @@ object FormServis: TFormServis
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            '[datasetsservis."kota"]')
-          ParentFont = False
-        end
-        object Memo20: TfrxMemoView
-          Left = 657.638220000000000000
-          Width = 75.590600000000000000
-          Height = 18.897650000000000000
-          ShowHint = False
-          DataField = 'kodepos'
-          DataSet = frxdbdtst1
-          DataSetName = 'datasetsservis'
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -13
-          Font.Name = 'Arial'
-          Font.Style = []
-          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
-          HAlign = haCenter
-          Memo.UTF8 = (
-            '[datasetsservis."kodepos"]')
+            '[datasetsservis."id_sparepart"]')
           ParentFont = False
         end
       end
@@ -500,13 +514,13 @@ object FormServis: TFormServis
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            'ID')
+            'NO')
           ParentFont = False
         end
         object Memo4: TfrxMemoView
           Left = 71.811070000000000000
           Top = 3.779530000000000000
-          Width = 136.063080000000000000
+          Width = 166.299320000000000000
           Height = 18.897650000000000000
           ShowHint = False
           Font.Charset = DEFAULT_CHARSET
@@ -521,9 +535,9 @@ object FormServis: TFormServis
           ParentFont = False
         end
         object Memo7: TfrxMemoView
-          Left = 438.425480000000000000
+          Left = 502.677490000000000000
           Top = 3.779530000000000000
-          Width = 94.488250000000000000
+          Width = 113.385900000000000000
           Height = 18.897650000000000000
           ShowHint = False
           Font.Charset = DEFAULT_CHARSET
@@ -534,11 +548,11 @@ object FormServis: TFormServis
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            'TELP')
+            'HARGA')
           ParentFont = False
         end
         object Memo8: TfrxMemoView
-          Left = 313.700990000000000000
+          Left = 377.953000000000000000
           Top = 3.779530000000000000
           Width = 124.724490000000000000
           Height = 18.897650000000000000
@@ -551,13 +565,13 @@ object FormServis: TFormServis
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            'ALAMAT')
+            'PERLENGKAPAN')
           ParentFont = False
         end
         object Memo9: TfrxMemoView
-          Left = 207.874150000000000000
+          Left = 238.110390000000000000
           Top = 3.779530000000000000
-          Width = 105.826840000000000000
+          Width = 139.842610000000000000
           Height = 18.897650000000000000
           ShowHint = False
           Font.Charset = DEFAULT_CHARSET
@@ -568,11 +582,11 @@ object FormServis: TFormServis
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            'JENIS KELAMIN')
+            'KERUSAKAN')
           ParentFont = False
         end
         object Memo10: TfrxMemoView
-          Left = 532.913730000000000000
+          Left = 616.063390000000000000
           Top = 3.779530000000000000
           Width = 124.724490000000000000
           Height = 18.897650000000000000
@@ -585,58 +599,170 @@ object FormServis: TFormServis
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            'KOTA')
-          ParentFont = False
-        end
-        object Memo11: TfrxMemoView
-          Left = 657.638220000000000000
-          Top = 3.779530000000000000
-          Width = 75.590600000000000000
-          Height = 18.897650000000000000
-          ShowHint = False
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -13
-          Font.Name = 'Arial'
-          Font.Style = []
-          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
-          HAlign = haCenter
-          Memo.UTF8 = (
-            'KODE POS')
+            'SPAREPART')
           ParentFont = False
         end
       end
       object Header2: TfrxHeader
-        Height = 49.133890000000000000
+        Height = 22.677180000000000000
         Top = 234.330860000000000000
         Width = 740.409927000000000000
+        object Memo11: TfrxMemoView
+          Top = 3.779530000000000000
+          Width = 132.283550000000000000
+          Height = 18.897650000000000000
+          ShowHint = False
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          HAlign = haCenter
+          Memo.UTF8 = (
+            'STATUS')
+          ParentFont = False
+        end
+        object Memo1: TfrxMemoView
+          Left = 132.283550000000000000
+          Top = 3.779530000000000000
+          Width = 132.283550000000000000
+          Height = 18.897650000000000000
+          ShowHint = False
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          HAlign = haCenter
+          Memo.UTF8 = (
+            'TANGGAL')
+          ParentFont = False
+        end
+        object Memo5: TfrxMemoView
+          Left = 264.567100000000000000
+          Top = 3.779530000000000000
+          Width = 132.283550000000000000
+          Height = 18.897650000000000000
+          ShowHint = False
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          HAlign = haCenter
+          Memo.UTF8 = (
+            'PELANGGAN')
+          ParentFont = False
+        end
       end
       object MasterData2: TfrxMasterData
         Height = 18.897650000000000000
-        Top = 306.141930000000000000
+        Top = 279.685220000000000000
         Width = 740.409927000000000000
         DataSet = frxdbdtst1
         DataSetName = 'datasetsservis'
         RowCount = 0
+        object Memo20: TfrxMemoView
+          Width = 132.283550000000000000
+          Height = 18.897650000000000000
+          ShowHint = False
+          DataField = 'status'
+          DataSet = frxdbdtst1
+          DataSetName = 'datasetsservis'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          HAlign = haCenter
+          Memo.UTF8 = (
+            '[datasetsservis."status"]')
+          ParentFont = False
+        end
+        object Memo2: TfrxMemoView
+          Left = 132.283550000000000000
+          Width = 132.283550000000000000
+          Height = 18.897650000000000000
+          ShowHint = False
+          DataField = 'tgl_servis'
+          DataSet = frxdbdtst1
+          DataSetName = 'datasetsservis'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          HAlign = haCenter
+          Memo.UTF8 = (
+            '[datasetsservis."tgl_servis"]')
+          ParentFont = False
+        end
+        object Memo6: TfrxMemoView
+          Left = 264.567100000000000000
+          Width = 132.283550000000000000
+          Height = 18.897650000000000000
+          ShowHint = False
+          DataField = 'id_pelanggan'
+          DataSet = frxdbdtst1
+          DataSetName = 'datasetsservis'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          HAlign = haCenter
+          Memo.UTF8 = (
+            '[datasetsservis."id_pelanggan"]')
+          ParentFont = False
+        end
       end
     end
   end
-  object ZQuery1: TZQuery
+  object zqry1: TZQuery
+    Connection = con1
+    Active = True
+    SQL.Strings = (
+      'select * from data_servis')
+    Params = <>
+    Left = 504
+    Top = 104
+  end
+  object con1: TZConnection
+    ControlsCodePage = cGET_ACP
+    UTF8StringsAsWideField = False
+    AutoEncodeStrings = False
+    Connected = True
+    HostName = 'localhost'
+    Port = 3306
+    Database = 'visual3akhir'
+    User = 'root'
+    Protocol = 'mysql'
+    LibraryLocation = 'D:\Uniska\Delphi7\Semester 5\Visual3Akhir\libmysql.dll'
+    Left = 384
+    Top = 40
+  end
+  object zqry2: TZQuery
     Connection = con1
     Active = True
     SQL.Strings = (
       'select * from stok')
     Params = <>
     Left = 568
-    Top = 104
+    Top = 112
   end
-  object ZQuery2: TZQuery
+  object zqry3: TZQuery
     Connection = con1
     Active = True
     SQL.Strings = (
       'select * from pelanggan')
     Params = <>
-    Left = 624
-    Top = 104
+    Left = 608
+    Top = 112
   end
 end

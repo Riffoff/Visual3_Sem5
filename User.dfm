@@ -1,6 +1,6 @@
 object FormUser: TFormUser
-  Left = 205
-  Top = 197
+  Left = 283
+  Top = 148
   Width = 1044
   Height = 540
   Caption = 'Form User'

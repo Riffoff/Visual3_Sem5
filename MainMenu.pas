@@ -16,10 +16,10 @@ type
     Button6: TButton;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
-    procedure Button3Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
     procedure Button6Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -31,7 +31,7 @@ var
 
 implementation
 
-uses Pelanggan, DataServis, Stok, Supplier, Transaksi, User;
+uses Pelanggan, DataServis, Supplier, Transaksi, User, Stok;
 
 {$R *.dfm}
 
@@ -43,11 +43,6 @@ end;
 procedure TFormMenu.Button2Click(Sender: TObject);
 begin
 FormServis.showmodal;
-end;
-
-procedure TFormMenu.Button3Click(Sender: TObject);
-begin
-FormStok.showmodal;
 end;
 
 procedure TFormMenu.Button4Click(Sender: TObject);
@@ -63,6 +58,11 @@ end;
 procedure TFormMenu.Button6Click(Sender: TObject);
 begin
 FormUser.showmodal;
+end;
+
+procedure TFormMenu.Button3Click(Sender: TObject);
+begin
+FormStok.showmodal;
 end;
 
 end.
